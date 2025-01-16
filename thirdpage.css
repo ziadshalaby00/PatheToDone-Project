@@ -1,0 +1,208 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@media (max-width: 239px){
+    *{
+        font-size: 8px;
+    }
+    #textHeader {
+        font-size: 14px;
+    }
+}
+@media (min-width: 240px) and (max-width: 320px) {
+    *{
+        font-size: 12px;
+    }
+    #textHeader {
+        font-size: 18px;
+    }
+}
+@media (min-width: 321px) and (max-width: 480px) {
+    *{
+        font-size: 14px;
+    }
+    #textHeader {
+        font-size: 22px;
+    }
+}
+@media (min-width: 481px) and (max-width: 600px) {
+    *{
+        font-size: 16px;
+    }
+    #textHeader {
+        font-size: 24px;
+    }
+}
+@media (min-width: 601px) and (max-width: 1000px) {
+    *{
+        font-size: 18px;
+    }
+    #textHeader {
+        font-size: 28px;
+    }
+}
+@media (min-width: 1001px){
+    *{
+        font-size: 18px;
+    }
+    #textHeader {
+        font-size: 32px;
+    }
+}
+.header, .date, .buttons, .goToList, #beforTasks{
+    display: flex;
+}
+body {
+    font-family: "Tajawal", sans-serif;
+    direction: rtl;
+    background-color: rgb(30, 0, 77);
+}
+.header {
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 1.5% 4%;
+    background-color: rgb(44, 115, 209);
+}
+.headerStar {
+    background-color: rgba(255, 196, 0)
+}
+.headerDone {
+
+    background-color: rgb(38, 141, 38);
+}
+#container {
+    width: 95vw;
+    margin: 0 auto;
+    min-height: 80vh;
+    background-color: rgb(239, 239, 239);
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    padding: 10px;
+}
+#textHeader {
+    color: rgb(255, 255, 255);
+}
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    color: rgb(34, 182, 182);
+    background-color: white;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    line-height: 0;
+}
+.circle:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+.newList {
+    align-items: center;
+    background-color: rgb(184, 201, 235);
+    color: rgb(0, 0, 0);
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 15px 10px 10px 10px;
+}
+.newList:hover {
+    transition: 0.2s box-shadow;
+    box-shadow: 0 3px 15px rgba(97, 97, 97,0.834);
+}
+.newListDone {
+    align-items: center;
+    background: rgba(12, 233, 130, 0.534);
+    color: rgb(0, 0, 0);
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 15px 10px 10px 10px;
+}
+.newListDone:hover {
+    transition: 0.2s box-shadow;
+    box-shadow: 0 3px 15px rgba(97, 97, 97,0.834);
+}
+.textHeader {
+    max-width: 100%;
+    word-wrap: break-word;
+}
+.date {
+    margin-top: 10px;
+    font-size: 14px;
+    align-items: center;
+}
+.starBTN {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    line-height: 0;
+    color: rgb(0, 0, 0);
+}
+.notStarBTN {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    line-height: 0;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 196, 0, 0.692);
+}
+.checkBTN {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    line-height: 0;
+    color: rgb(255, 255, 255);
+    background-color: rgb(224, 25, 25);
+}
+.notCheckBTN {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    line-height: 0;
+    color: rgb(255, 255, 255);
+    background-color: green;
+}
+.buttons {
+    justify-content: left;
+    gap: 20px;
+}
+#Copyright {
+    width: 95vw;
+    margin: auto;
+    text-align: center;
+    padding: 5px 0 10px 0;
+    background-color: rgb(239, 239, 239);
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+#beforTasks {
+    justify-content: center;
+    width: 95vw;
+    margin: 0 auto;
+    background-color: rgb(239, 239, 239);
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    padding: 10px;
+    padding-top: 14vh;
+}
+.goToList{
+    margin-top: 5px;
+    align-items: center;
+    gap: 5px;
+}
+.goToList:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}

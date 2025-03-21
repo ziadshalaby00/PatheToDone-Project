@@ -1,5 +1,5 @@
 # PathToDone Project
-Task Management Website (Frontend)
+# Task Management Website (Frontend)
 A frontend website that provides features for creating lists, adding tasks within them, marking tasks as important or completed, and searching for them.
 
 # Technologies Used

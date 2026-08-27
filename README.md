@@ -22,3 +22,13 @@ A lightweight, frontend-only task management web app for creating lists, organiz
 | CSS3 | Responsive design with media queries |
 | Vanilla JavaScript | DOM manipulation, event handling, and CRUD operations |
 | LocalStorage API | Client-side data persistence |
+
+---
+
+## 📄 License
+
+Developed entirely by [Ziad Shalaby](https://github.com/ziadshalaby00).
+
+This project is licensed under the **MIT License**.
+
+---

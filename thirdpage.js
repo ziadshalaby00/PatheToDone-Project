@@ -115,7 +115,7 @@ function valueOfdoneList(task) {
 
 function tasksPage(ID) {
     localStorage.setItem("objectSent", ID)
-    location.href = "secondPage.html";
+    location.href = "./secondpage.html";
 }
 
 const beforTasks = document.getElementById("beforTasks");

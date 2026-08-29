@@ -89,7 +89,7 @@ function deleting(ID) {
 
 function tasksPage(ID) {
     localStorage.setItem("objectSent", ID)
-    location.href = "secondPage.html";
+    location.href = "./secondpage.html";
 }
 
 function storageLists()
@@ -220,15 +220,15 @@ function closeResults()
 function goToThirdPage() {
     objTasksForThirdPage = objTasksForSearch;
     localStorage.setItem("objectForThirdPage", JSON.stringify(objTasksForThirdPage));
-    location.href = "thirdPage.html";
+    location.href = "./thirdpage.html";
 }
 
 function doneTasks() {
     localStorage.setItem("objectForThirdPage",localStorage.getItem("objForDoneTasks"));
-    location.href = "thirdPage.html";
+    location.href = "./thirdpage.html";
 }
 
 function starTasks() {
     localStorage.setItem("objectForThirdPage",localStorage.getItem("objForStarTasks"));
-    location.href = "thirdPage.html";
+    location.href = "./thirdpage.html";
 }

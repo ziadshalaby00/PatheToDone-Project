@@ -2,10 +2,6 @@
 
 A lightweight, frontend-only task management web app for creating lists, organizing tasks, and tracking progress — all in the browser.
 
-## 🌐 Live Demo
-
-🔗 https://pathtodone.netlify.app
-
 ## ✨ Features
 
 - 📝 Create & manage task lists — Add, edit, or delete lists.

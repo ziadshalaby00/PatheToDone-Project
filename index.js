@@ -147,67 +147,88 @@ searchInput.addEventListener("keypress", function(event){
     }
 })
 
-function selectorAllSearch()
-{
-    if(searchInput.value)
-    {
-        div000.style.display = "block";
-        div000.innerHTML = `<div id="results">
-                                <button id="closeResults" onclick="closeResults()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#22b6b6"><path d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z"/></svg>
-                                </button>
-                                <h5 class="textOutPut">
-                                    <div class="spinner-border" role="status" style="color: blue;">
-                                        <span class="visually-hidden">Loading...</span>
-                                    </div>
-                                </h5>
-                            </div>`
+function selectorAllSearch() {
+    const query = searchInput.value.trim().toLowerCase();
 
-        setTimeout(function(){
-            div000.getElementsByTagName("h5")[0].innerHTML = ""
-            let searchInputSmall = String(searchInput.value).toLowerCase();
-            let num = 0;
-            let titleTask = "";
-            for(let list in lists)
-            {
-                for(let task in lists[list].tasks)
-                {
-                    if(String(lists[list].tasks[task].title).toLowerCase() == searchInputSmall)
-                    {
-                        num++;
-                        let model = {
-                            title: lists[list].tasks[task].title,
-                            date: lists[list].tasks[task].date,
-                            isDone: lists[list].tasks[task].isDone,
-                            isStar: lists[list].tasks[task].isStar,
-                            titleList: lists[list].title,
-                            IDList: lists[list].ID,
-                        }
-                        objTasksForSearch[lists[list].tasks[task].ID] = model;
-                        titleTask = lists[list].tasks[task].title;
-                    }
-                }
-            }
-            search(num, titleTask);
-        },500)
+    if (!query) {
+        return;
     }
+
+    div000.style.display = "block";
+
+    div000.innerHTML = `
+        <div id="results">
+            <button id="closeResults" onclick="closeResults()">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     height="40px"
+                     viewBox="0 -960 960 960"
+                     width="40px"
+                     fill="#22b6b6">
+                    <path d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z"/>
+                </svg>
+            </button>
+
+            <h5 class="textOutPut"></h5>
+        </div>
+    `;
+
+    objTasksForSearch = {};
+
+    let num = 0;
+
+    for (const list in lists) {
+
+        for (const task in lists[list].tasks) {
+
+            const currentTask = lists[list].tasks[task];
+
+            const title = String(currentTask.title).toLowerCase();
+
+            if (title.includes(query)) {
+
+                num++;
+
+                objTasksForSearch[currentTask.ID] = {
+                    title: currentTask.title,
+                    date: currentTask.date,
+                    isDone: currentTask.isDone,
+                    isStar: currentTask.isStar,
+                    titleList: lists[list].title,
+                    IDList: lists[list].ID,
+                };
+            }
+        }
+    }
+
+    search(num);
 }
 
-function search(num, titleTask)
-{
-    if(num !== 0)
-    {
-        objTasksForSearch.title = `<h2>(<span style="color: blue;">${num}</span>) نتائج مطابقة للبحث</h2>`;
+function search(num) {
+
+    const output = div000.getElementsByTagName("h5")[0];
+
+    if (num > 0) {
+
+        objTasksForSearch.title = `
+            <h2>
+                (<span style="color: blue;">${num}</span>)
+                نتائج مطابقة للبحث
+            </h2>
+        `;
+
         goToThirdPage();
-    }
-    else
-    {
-        div000.getElementsByTagName("h5")[0].innerHTML +=`لا نتائج
-        <span class="material-symbols-outlined">
-            search_off
-        </span>
-        <div>الرجاء إدخال اسم المهمة الصحيح`
-        
+
+    } else {
+
+        output.innerHTML = `
+            لا توجد نتائج
+            <span class="material-symbols-outlined">
+                search_off
+            </span>
+            <div>
+                الرجاء تجربة كلمة أخرى
+            </div>
+        `;
     }
 }
 

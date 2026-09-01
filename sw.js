@@ -1,4 +1,4 @@
-const CACHE_NAME = "path-to-done-v4";
+const CACHE_NAME = "path-to-done-v5";
 
 const FILES_TO_CACHE = [
   "./",
@@ -26,7 +26,12 @@ self.addEventListener("install", event => {
     caches.open(CACHE_NAME).then(cache =>
       Promise.allSettled(
         FILES_TO_CACHE.map(url =>
-          cache.add(url).catch(err => console.warn("Failed to cache:", url, err))
+          fetch(url).then(res => {
+            if (res.ok && !res.redirected) {
+              return cache.put(url, res);
+            }
+            console.warn("Skipped caching (redirected or failed):", url);
+          }).catch(err => console.warn("Failed to fetch:", url, err))
         )
       )
     )
@@ -50,21 +55,19 @@ self.addEventListener("activate", event => {
 
 self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request)
-      .then(cached => {
-        if (cached) {
-          return cached;
-        }
-
-        return fetch(event.request)
-          .then(response => {
-            if (response.ok || response.type === "opaque") {
-              const responseClone = response.clone();
-              caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseClone));
-            }
-            return response;
-          })
-          .catch(() => caches.match("./index.html"));
-      })
+    caches.match(event.request).then(cached => {
+      if (cached && !(event.request.mode === "navigate" && cached.redirected)) {
+        return cached;
+      }
+      return fetch(event.request)
+        .then(response => {
+          if ((response.ok || response.type === "opaque") && !response.redirected) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => cached || caches.match("./index.html"));
+    })
   );
 });

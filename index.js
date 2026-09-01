@@ -211,7 +211,7 @@ function search(num) {
 
         objTasksForSearch.title = `
             <h2>
-                (<span style="color: blue;">${num}</span>)
+                (<span style="color: #4F8FEF;">${num}</span>)
                 نتائج مطابقة للبحث
             </h2>
         `;

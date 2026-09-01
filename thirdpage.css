@@ -206,3 +206,115 @@ body {
     cursor: pointer;
     opacity: 0.7;
 }
+
+
+
+
+
+
+/* ============================================
+   Dark Theme Overrides
+   ============================================ */
+
+/* --- Body --- */
+body.dark {
+    background-color: rgb(15, 0, 38);
+}
+
+/* --- Header --- */
+body.dark .header {
+    background-color: rgb(25, 70, 140);
+}
+
+/* --- Header Star --- */
+body.dark .headerStar {
+    background-color: rgba(180, 138, 0, 1);
+}
+
+/* --- Header Done --- */
+body.dark .headerDone {
+    background-color: rgb(22, 90, 22);
+}
+
+/* --- Container --- */
+body.dark #container {
+    background-color: rgb(20, 20, 28);
+    border-left: 2px solid rgb(50, 50, 60);
+    border-right: 2px solid rgb(50, 50, 60);
+}
+
+/* --- Text Header --- */
+body.dark #textHeader {
+    color: rgb(255, 255, 255);
+}
+
+/* --- Circle Button --- */
+body.dark .circle {
+    color: rgb(28, 150, 150);
+    background-color: rgb(35, 35, 42);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* --- New List Item --- */
+body.dark .newList {
+    background-color: rgb(28, 38, 68);
+    color: rgb(210, 215, 230);
+    border-bottom: 1px solid rgb(50, 50, 65);
+}
+
+body.dark .newList:hover {
+    box-shadow: 0 3px 15px rgba(70, 90, 170, 0.45);
+}
+
+/* --- New List Done --- */
+body.dark .newListDone {
+    background: rgba(8, 120, 65, 0.534);
+    color: rgb(200, 230, 210);
+    border-bottom: 1px solid rgb(50, 50, 65);
+}
+
+body.dark .newListDone:hover {
+    box-shadow: 0 3px 15px rgba(50, 150, 90, 0.4);
+}
+
+/* --- Star Button (empty/unstarred state) --- */
+body.dark .starBTN {
+    color: rgb(200, 200, 200);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Not Star Button (starred state) --- */
+body.dark .notStarBTN {
+    color: rgb(255, 255, 255);
+    background-color: rgba(180, 138, 0, 0.692);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Check Button (checked/delete state) --- */
+body.dark .checkBTN {
+    color: rgb(255, 255, 255);
+    background-color: rgb(160, 18, 18);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Not Check Button (unchecked state) --- */
+body.dark .notCheckBTN {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 85, 0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+/* --- Copyright --- */
+body.dark #Copyright {
+    background-color: rgb(20, 20, 28);
+    border-left: 2px solid rgb(50, 50, 60);
+    border-right: 2px solid rgb(50, 50, 60);
+    color: rgb(200, 200, 200);
+}
+
+/* --- Before Tasks --- */
+body.dark #beforTasks {
+    background-color: rgb(20, 20, 28);
+    border-left: 2px solid rgb(50, 50, 60);
+    border-right: 2px solid rgb(50, 50, 60);
+    color: rgb(200, 200, 200);
+}

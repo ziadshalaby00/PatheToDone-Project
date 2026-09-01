@@ -113,7 +113,7 @@ body {
     border-radius: 0 30px 30px 0;
     box-shadow: 5px 0 5px rgba(0, 0, 0, 0.5);
     transform: translateX(-105%);
-    transition: transform 1.2s ease;
+    transition: transform 0.3s ease;
 }
 #sideBarContainer > button {
     position: absolute;
@@ -338,4 +338,132 @@ body {
 .textOutPut {
     max-width: 40vw;
     word-wrap: break-word;
+}
+
+
+
+
+
+/* ============================================
+   Dark Theme Overrides
+   ============================================ */
+
+body.dark {
+    background-color: rgb(15, 0, 42);
+}
+
+
+body.dark #header {
+    background-color: rgb(25, 80, 80);
+}
+
+body.dark #container {
+    background-color: rgb(22, 22, 30);
+    border-left: 2px solid rgb(55, 55, 65);
+    border-right: 2px solid rgb(55, 55, 65);
+}
+
+body.dark #textHeader {
+    color: rgb(240, 240, 255);
+}
+
+body.dark .circle {
+    color: rgb(60, 215, 215);
+    background-color: rgb(35, 35, 48);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+body.dark #addList {
+    color: rgb(240, 240, 255);
+}
+
+
+body.dark #sideBarContainer {
+    background-color: rgb(25, 80, 80);
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.7);
+}
+
+
+body.dark .newList {
+    background-color: rgb(28, 62, 115);
+    color: rgb(230, 230, 245);
+    border-bottom: 1px solid rgb(55, 55, 65);
+    box-shadow:
+        4px 4px 0px 0px rgba(0, 0, 0, 0.25),
+        8px 8px 0px 0px rgba(0, 0, 0, 0.2),
+        12px 12px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+body.dark .deleteButtons {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    color: rgb(255, 255, 255);
+    background-color: rgb(140, 15, 15);
+}
+
+
+body.dark .editButtons {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    color: rgb(255, 255, 255);
+    background-color: rgba(20, 40, 180, 0.8);
+}
+
+
+body.dark .innSB {
+    background-color: rgb(20, 25, 40);
+}
+
+
+body.dark .outputSearch {
+    background-color: rgb(32, 28, 22);
+}
+
+body.dark #ulSearch li {
+    color: rgb(155, 100, 255);
+}
+
+
+body.dark #searchIcon {
+    background-color: transparent;
+}
+
+body.dark #textOUT {
+    color: rgb(80, 120, 255);
+}
+
+body.dark .circleIcons {
+    color: rgb(240, 240, 255);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+body.dark #starIcon {
+    background-color: rgba(220, 170, 0, 0.8);
+}
+
+body.dark #checkIcon {
+    background-color: rgb(0, 130, 30);
+}
+
+body.dark #Copyright {
+    background-color: rgb(22, 22, 30);
+    border-left: 2px solid rgb(55, 55, 65);
+    border-right: 2px solid rgb(55, 55, 65);
+    color: rgb(200, 200, 200);
+}
+
+body.dark .numCOM {
+    color: rgb(50, 235, 50);
+}
+
+body.dark #results {
+    background-color: rgba(18, 18, 28, 0.95);
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.7);
+}
+
+body.dark #closeResults {
+    background-color: transparent;
+    color: rgb(60, 215, 215);
+}
+
+body.dark .textOutPut {
+    color: rgb(200, 200, 200);
 }

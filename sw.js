@@ -1,4 +1,4 @@
-const CACHE_NAME = "path-to-done-v6";
+const CACHE_NAME = "path-to-done-v7";
 
 const FILES_TO_CACHE = [
   "./",
@@ -15,6 +15,7 @@ const FILES_TO_CACHE = [
   "./thirdpage.js",
 
   "./site.webmanifest",
+  "./theme.js",
 
   "./favicon/android-chrome-192x192.png",
   "./favicon/android-chrome-512x512.png",

@@ -243,3 +243,144 @@ body {
     padding: 10px;
     padding-top: 14vh;
 }
+
+
+
+
+
+
+
+
+/* ============================================
+   Dark Theme Overrides
+   ============================================ */
+
+body.dark {
+    background-color: rgb(15, 0, 38);
+}
+
+body.dark #header {
+    background-color: rgb(55, 15, 95);
+}
+
+body.dark #container {
+    background-color: rgb(20, 20, 28);
+    border-left: 2px solid rgb(50, 50, 60);
+    border-right: 2px solid rgb(50, 50, 60);
+}
+
+body.dark #textHeader {
+    color: rgb(255, 255, 255);
+}
+
+body.dark .circle {
+    color: rgb(30, 160, 160);
+    background-color: rgb(35, 35, 42);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .circle:hover {
+    opacity: 0.7;
+}
+
+body.dark #addList {
+    color: rgb(255, 255, 255);
+}
+
+body.dark #addList:hover {
+    opacity: 0.7;
+}
+
+body.dark .newList {
+    background-color: rgb(28, 40, 72);
+    color: rgb(210, 215, 230);
+    border-bottom: 1px solid rgb(50, 50, 65);
+}
+
+body.dark .newList:hover {
+    box-shadow: 0 3px 15px rgba(80, 100, 180, 0.4);
+}
+
+body.dark .newListDone {
+    background: rgba(8, 120, 65, 0.534);
+    color: rgb(200, 230, 210);
+    border-bottom: 1px solid rgb(50, 50, 65);
+}
+
+body.dark .newListDone:hover {
+    box-shadow: 0 3px 15px rgba(60, 160, 100, 0.4);
+}
+
+body.dark .deleteBTN {
+    color: rgb(255, 255, 255);
+    background-color: rgb(90, 5, 5);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .deleteBTN:hover {
+    opacity: 0.7;
+}
+
+body.dark .editBTN {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 10, 130, 0.692);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .editBTN:hover {
+    opacity: 0.7;
+}
+
+body.dark .starBTN {
+    color: rgb(200, 200, 200);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .starBTN:hover {
+    opacity: 0.7;
+}
+
+body.dark .notStarBTN {
+    color: rgb(255, 255, 255);
+    background-color: rgba(180, 130, 0, 0.692);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .notStarBTN:hover {
+    opacity: 0.7;
+}
+
+body.dark .checkBTN {
+    color: rgb(255, 255, 255);
+    background-color: rgb(160, 18, 18);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .checkBTN:hover {
+    opacity: 0.7;
+}
+
+body.dark .notCheckBTN {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 85, 0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .notCheckBTN:hover {
+    opacity: 0.7;
+}
+
+
+body.dark #Copyright {
+    background-color: rgb(20, 20, 28);
+    border-left: 2px solid rgb(50, 50, 60);
+    border-right: 2px solid rgb(50, 50, 60);
+    color: rgb(200, 200, 200);
+}
+
+body.dark #beforTasks {
+    background-color: rgb(20, 20, 28);
+    border-left: 2px solid rgb(50, 50, 60);
+    border-right: 2px solid rgb(50, 50, 60);
+    color: rgb(200, 200, 200);
+}

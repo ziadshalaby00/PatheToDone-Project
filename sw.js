@@ -1,4 +1,4 @@
-const CACHE_NAME = "path-to-done-v1";
+const CACHE_NAME = "path-to-done-v2";
 
 const FILES_TO_CACHE = [
   "./",
@@ -14,12 +14,12 @@ const FILES_TO_CACHE = [
   "./thirdpage.css",
   "./thirdpage.js",
 
-  "./manifest.json",
+  "./site.webmanifest",
 
-  "./icons/icon-192.png",
-  "./icons/icon-512.png"
+  "./favicon/android-chrome-192x192.png",
+  "./favicon/android-chrome-512x512.png",
+  "./favicon/favicon.ico"
 ];
-
 
 self.addEventListener("install", event => {
   event.waitUntil(
@@ -29,7 +29,6 @@ self.addEventListener("install", event => {
 
   self.skipWaiting();
 });
-
 
 self.addEventListener("activate", event => {
   event.waitUntil(
@@ -45,12 +44,28 @@ self.addEventListener("activate", event => {
   self.clients.claim();
 });
 
-
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request)
-      .then(cachedResponse => {
-        return cachedResponse || fetch(event.request);
+      .then(cached => {
+        if (cached) {
+          return cached;
+        }
+
+        return fetch(event.request)
+          .then(response => {
+
+            // Cache external resources
+            if (response.ok || response.type === "opaque") {
+              const responseClone = response.clone();
+
+              caches.open(CACHE_NAME).then(cache => {
+                cache.put(event.request, responseClone);
+              });
+            }
+
+            return response;
+          });
       })
   );
 });

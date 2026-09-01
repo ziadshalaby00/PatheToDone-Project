@@ -2,6 +2,7 @@
   "name": "Path To Done",
   "short_name": "PathToDone",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",

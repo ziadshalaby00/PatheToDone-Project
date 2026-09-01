@@ -1,3 +1,6 @@
+name = "pathetodone"
+compatibility_date = "2026-08-28"
+
 [assets]
 directory = "./"
 html_handling = "none"

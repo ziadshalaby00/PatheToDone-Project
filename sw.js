@@ -1,4 +1,4 @@
-const CACHE_NAME = "path-to-done-v3";
+const CACHE_NAME = "path-to-done-v4";
 
 const FILES_TO_CACHE = [
   "./",
@@ -23,10 +23,14 @@ const FILES_TO_CACHE = [
 
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(FILES_TO_CACHE))
+    caches.open(CACHE_NAME).then(cache =>
+      Promise.allSettled(
+        FILES_TO_CACHE.map(url =>
+          cache.add(url).catch(err => console.warn("Failed to cache:", url, err))
+        )
+      )
+    )
   );
-
   self.skipWaiting();
 });
 
@@ -54,18 +58,13 @@ self.addEventListener("fetch", event => {
 
         return fetch(event.request)
           .then(response => {
-
-            // Cache external resources
             if (response.ok || response.type === "opaque") {
               const responseClone = response.clone();
-
-              caches.open(CACHE_NAME).then(cache => {
-                cache.put(event.request, responseClone);
-              });
+              caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseClone));
             }
-
             return response;
-          });
+          })
+          .catch(() => caches.match("./index.html"));
       })
   );
 });
